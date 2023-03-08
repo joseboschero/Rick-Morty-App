@@ -1,0 +1,25 @@
+body {
+	background: linear-gradient(to right, #576182 5%, #1FC5A8 100%);
+    display: grid;
+}
+
+#card-holder {
+    display: grid;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    min-width: 300px;
+}
+
+#search-bar {
+    display:inline-flex;
+    margin: 0 auto;
+    max-height: 80px;
+}
+
+#search-icon {
+    margin-top: 25px;
+}
+
+#search-icon:hover {
+    cursor: pointer;
+}
