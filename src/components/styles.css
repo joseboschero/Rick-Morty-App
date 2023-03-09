@@ -1,5 +1,5 @@
 body {
-	background: linear-gradient(to right, #576182 5%, #1FC5A8 100%);
+	background-color: #355E3B;
     display: grid;
 }
 
@@ -7,6 +7,7 @@ body {
     display: grid;
     margin: 0 auto;
     margin-bottom: 10px;
+    margin-top: 50px;
     min-width: 300px;
 }
 
@@ -14,12 +15,43 @@ body {
     display:inline-flex;
     margin: 0 auto;
     max-height: 80px;
+    padding: 10px;
+}
+
+#search-bar-bg {
+    background-color: #7CFC00;
+    border-radius: 10px;
 }
 
 #search-icon {
-    margin-top: 25px;
+    margin-top: 17px;
+    margin-left: 5px;
 }
 
 #search-icon:hover {
     cursor: pointer;
+}
+
+#filas-cards {
+    flex-wrap: wrap;
+}
+
+#random-char {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+#card-counter {
+    margin-top: 14px;
+    margin-left: 300px;
+}
+
+#btn-close {
+    border: none;
+    border-bottom-left-radius: 10px;
+}
+
+#btn-close-div {
+    position: absolute;
+    right: 0px;
 }
