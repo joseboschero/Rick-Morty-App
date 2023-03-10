@@ -34,7 +34,7 @@ export default function BasicTextFields(props) {
 
   return (
     <div id="search-bar">
-        <TextField id="filled-basic" label="Insert ID" variant="filled" onChange={handleChange} />
+      <TextField id="filled-basic" label="Insert ID" variant="filled" onChange={handleChange} />
       <div id="search-icon">
         <AddCircleIcon onClick={() => props.onSearch(id)} />
       </div>

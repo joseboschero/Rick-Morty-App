@@ -5,11 +5,10 @@ import Nav from './components/Nav.jsx'
 import {useState} from 'react'
 import axios from 'axios'
 
+
 function App () {
-
+  
   const [characters, setCharacters] = useState([]);
-
-  let cardCounter = 0;
 
   function onSearch(id) {
     let existe = characters.filter(char => char.id == parseInt(id))
@@ -43,6 +42,7 @@ function App () {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
+      <h1 id='title-page'>Rick&Morty App</h1>
       <Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} />
       <div>
         <Cards characters={characters} onClose={onClose} id={characters.id} />
