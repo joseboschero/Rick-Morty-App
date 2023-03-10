@@ -6,7 +6,7 @@ export default function Nav(props) {
 
     return (
         <div id='search-bar-bg'>
-            <SearchBar onSearch={props.onSearch} onRandom={props.onRandom} cardCounter={props.cardCounter} />
+            <SearchBar onSearch={props.onSearch} onRandom={props.onRandom} cardCounter={props.cardCounter} onCloseAll={props.onCloseAll} />
         </div>
     );
   }

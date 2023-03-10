@@ -55,3 +55,16 @@ body {
     position: absolute;
     right: 0px;
 }
+
+#delete-all {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#show-delete-all-false {
+    display: none;
+}
+
+#show-delete-all-true {
+
+}

@@ -37,9 +37,13 @@ function App () {
     onSearch(numRandom)
   }
 
+  const onCloseAll = () => {
+    setCharacters([])
+  }
+
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} />
+      <Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} />
       <div>
         <Cards characters={characters} onClose={onClose} id={characters.id} />
       </div>     
