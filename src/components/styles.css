@@ -92,3 +92,161 @@ body {
 #searchbar-delete {
     display: block;
 }
+
+#about-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Patrick Hand SC', cursive;
+    color: #04D939;
+    align-items: center;
+}
+
+#about-text h1,h2 {
+    margin-left: 10px;
+}
+
+#about-text span {
+    color: #F2E7DC;
+}
+
+#about-text a {
+    margin: 5px 5px;
+}
+
+#detail {
+    display: flex;
+    margin-top: 30px;
+    color: #04D939;
+    flex-direction: column;
+    align-items: center;
+}
+
+#detail h1 {
+
+}
+
+#detail-data {
+    color: #F2E7DC;
+}
+
+/* Detail Card */
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  
+  
+  #detail-card-holder {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+  
+  
+  #card {
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    font-family: 'Patrick Hand SC', cursive;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  #card:hover {
+    color: #F2E7DC;
+    transition: color 1s;  
+    background-size: 0%;
+  }
+
+  #card:hover:before, #card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  
+  #card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #04D939, #62C51B 43%, #27871C);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+    
+  }
+  
+  #card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #04D939, #62C51B 43%, #27871C);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+/* Detail Card END */
+
+#not-found {
+    display: flex;
+    font-family: 'Patrick Hand SC', cursive;
+    flex-direction: column;
+    align-items: center;
+}
+
+#not-found img {
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+#not-found a {
+    color: #04D939;
+}

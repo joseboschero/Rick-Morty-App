@@ -28,15 +28,15 @@ export default function Nav(props) {
     return (
         <>
             <Navbar sticky='top' id='searchbar-delete'>
-                <Navbar id='search-bar-bg'>
-                    <div id='home-about'>
-                    <Link to='/about'>
-                        <Button color='success' variant='contained' >About</Button>
-                    </Link>
-                    </div>
+                <Navbar id='search-bar-bg'>  
                     <div id='home-about'>
                     <Link to='/home'>
                         <Button color='success' variant='contained' >Home</Button>
+                    </Link>
+                    </div>
+                    <div id='home-about'>
+                    <Link to='/about'>
+                        <Button color='success' variant='contained' >About</Button>
                     </Link>
                     </div>
                     <SearchBar onSearch={props.onSearch} onRandom={props.onRandom} cardCounter={props.cardCounter} onCloseAll={props.onCloseAll} />

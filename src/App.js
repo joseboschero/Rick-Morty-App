@@ -6,6 +6,8 @@ import {useState} from 'react'
 import axios from 'axios'
 import { Route, Routes } from 'react-router-dom'
 import About from './components/About.jsx'
+import Detail from './components/Detail.jsx'
+import Notfound from './components/Notfound.jsx'
 
 
 function App () {
@@ -53,9 +55,12 @@ function App () {
   return (
     <Routes>
       <Route path="/" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Cards characters={characters} onClose={onClose} id={characters.id} /></>} />
-      <Route path="/home" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Cards characters={characters} onClose={onClose} id={characters.id} /></>} />
-      <Route path="/about" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><About /></>} />
+      <Route exact path="/home" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Cards characters={characters} onClose={onClose} id={characters.id} /></>} />
+      <Route exact path="/about" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><About /></>} />
+      <Route path="/detail/:id" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Detail /></>} />
+      <Route path='*' element={<><Title /><Notfound /></>}/>
     </Routes>
+
   )
 }
 
