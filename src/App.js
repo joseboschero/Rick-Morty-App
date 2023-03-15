@@ -1,9 +1,11 @@
-import './App.css'
+import './components/styles.css'
 import Cards from './components/Cards.jsx'
 import './components/styles.css'
 import Nav from './components/Nav.jsx'
 import {useState} from 'react'
 import axios from 'axios'
+import { Route, Routes } from 'react-router-dom'
+import About from './components/About.jsx'
 
 
 function App () {
@@ -40,14 +42,20 @@ function App () {
     setCharacters([])
   }
 
+  function Title(){
+    return(
+      <div id='title-page-div'>
+        <h1 id='title-page'>Rick&Morty App</h1>
+      </div>
+    )
+  }
+
   return (
-    <div className='App' style={{ padding: '25px' }}>
-      <h1 id='title-page'>Rick&Morty App</h1>
-      <Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} />
-      <div>
-        <Cards characters={characters} onClose={onClose} id={characters.id} />
-      </div>     
-    </div>
+    <Routes>
+      <Route path="/" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Cards characters={characters} onClose={onClose} id={characters.id} /></>} />
+      <Route path="/home" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Cards characters={characters} onClose={onClose} id={characters.id} /></>} />
+      <Route path="/about" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><About /></>} />
+    </Routes>
   )
 }
 

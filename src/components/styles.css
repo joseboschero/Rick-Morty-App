@@ -24,6 +24,8 @@ body {
     position: sticky;
     background-color: #7CFC00;
     border-radius: 10px;
+    margin: 0 10px 0 10px;
+    width: 99%;
 }
 
 #search-icon {
@@ -60,8 +62,9 @@ body {
 }
 
 #delete-all {
-    margin-top: 10px;
-    margin-left: 50px;
+    display: flex;
+    margin: 15px 0 0 0;
+    justify-content: center;
 }
 
 #show-delete-all-false {
@@ -72,8 +75,20 @@ body {
 
 }
 
+#title-page-div {
+    text-align: center;
+}
+
 #title-page {
     font-family: 'Patrick Hand SC', cursive;
     color: #7CFC00;
     font-size: 200px;
+}
+
+#home-about {
+    margin-left: 30px;
+}
+
+#searchbar-delete {
+    display: block;
 }
