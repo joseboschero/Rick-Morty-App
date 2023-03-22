@@ -26,7 +26,7 @@ function MostrarDeleteAll(props) {
 export default function Nav(props) {
 
     return (
-        <>
+        <div id='navbarDiv'>
             <Navbar sticky='top' id='searchbar-delete'>
                 <Navbar id='search-bar-bg'>  
                     <div id='home-about'>
@@ -40,9 +40,12 @@ export default function Nav(props) {
                     </Link>
                     </div>
                     <SearchBar onSearch={props.onSearch} onRandom={props.onRandom} cardCounter={props.cardCounter} onCloseAll={props.onCloseAll} />
+                    <Link to='/login'>
+                        <Button color='success' variant='contained' id='btnLogin'>Log in</Button>
+                    </Link>
                 </Navbar>
                 <MostrarDeleteAll mostrar={true} onCloseAll={props.onCloseAll} cantCards={props.cardCounter}></MostrarDeleteAll>
             </Navbar> 
-        </>   
+        </div>   
     );
   }

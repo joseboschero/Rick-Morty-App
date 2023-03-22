@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom'
 import About from './components/About.jsx'
 import Detail from './components/Detail.jsx'
 import Notfound from './components/Notfound.jsx'
+import Login from './components/Form'
 
 
 function App () {
@@ -58,6 +59,7 @@ function App () {
       <Route exact path="/home" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Cards characters={characters} onClose={onClose} id={characters.id} /></>} />
       <Route exact path="/about" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><About /></>} />
       <Route path="/detail/:id" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Detail /></>} />
+      <Route path="/login" element={<><Title /><Nav onSearch={onSearch} onRandom={onRandom} cardCounter={characters.length} onCloseAll={onCloseAll} /><Login /></>} />
       <Route path='*' element={<><Title /><Notfound /></>}/>
     </Routes>
 
