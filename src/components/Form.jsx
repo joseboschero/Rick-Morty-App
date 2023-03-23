@@ -5,6 +5,9 @@ import './styles.css'
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import Validacion from "./validation";
+import DoneIcon from '@mui/icons-material/Done';
+import CloseIcon from '@mui/icons-material/Close';
+import 'animate.css';
 
 export default function Login() {
 
@@ -15,6 +18,8 @@ export default function Login() {
 
     const [errors, setErrors] = useState({});
 
+    let error = Validacion(userData)
+
     const handleChange = (e) => {
         setUserData((prevValues) => {
             return {
@@ -22,15 +27,7 @@ export default function Login() {
             [e.target.name]: e.target.value,
         }});
 
-        let error = Validacion(userData)
-
         setErrors({...error})
-
-        if (error.longitudEmail && error.longitudPass && error.sintaxis && error.numero && !error.vacio) {
-            console.log('Datos correctos')
-        } else {
-            console.log('Datos incorrectos')
-        }
     };
 
     const handleSubmit = (e) => {
@@ -43,10 +40,24 @@ export default function Login() {
         })
     }
 
-    
+    function MostrarSubmit() {
+        let mostrar;
+
+        if (error.longitudEmail && error.longitudPass && error.sintaxis && error.numero && !error.vacio) {
+            mostrar = true;
+        } else {
+            mostrar = false;
+        }
+
+        return (
+            <>
+                <Button variant="success" id={mostrar ? 'formSubmit' : 'formSubmitDisabled'} type="submit" >Log In</Button>
+            </>      
+        )
+    }
 
     return (
-        <div id="login">
+        <div id="login" className='animate__animated animate__slideInLeft'>
             <h1>LOG IN</h1>
             <hr />
             <div id='formLogin'>
@@ -65,6 +76,14 @@ export default function Login() {
                         />
                     </InputGroup>
 
+                    <div id="emailValidations">
+                        <span>El mail no debe estar vacío</span>
+                        {!error.vacio ? <DoneIcon id='doneIcon'/> : <CloseIcon id='closeIcon'/>}
+                        <br />
+                        <span>El mail no puede tener más de 35 carácteres</span>
+                        {error.longitudEmail ? <DoneIcon id='doneIcon'/> : <CloseIcon id='closeIcon'/>}
+                    </div>
+
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1" className="formText">PASSWORD</InputGroup.Text>
                         <FormB.Control
@@ -78,7 +97,16 @@ export default function Login() {
                             name="password"
                             />
                     </InputGroup>
-                    <Button variant="success" id="formSubmit" type="submit" >SUBMIT</Button>
+
+                    <div id="passValidations">
+                        <span>La password debe tener al menos un numero</span>
+                        {error.numero ? <DoneIcon id='doneIcon'/> : <CloseIcon id='closeIcon'/>}
+                        <br />
+                        <span>La password debe tener una longitud entre 6 y 10 characters</span>
+                        {error.longitudPass ? <DoneIcon id='doneIcon'/> : <CloseIcon id='closeIcon'/>}
+                    </div>
+
+                    <MostrarSubmit />
                 </form>
             </div>
         </div>

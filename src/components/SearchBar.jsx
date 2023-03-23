@@ -18,7 +18,7 @@ export default function BasicTextFields(props) {
     <div id="search-bar">
       <TextField id="filled-basic" label="Insert ID" variant="filled" onChange={handleChange} />
       <div id="search-icon">
-        <AddCircleIcon onClick={() => props.onSearch(id)} />
+        <AddCircleIcon onClick={() => props.onSearch(id) } />
       </div>
       <div id="random-char">
          <Button variant="contained" color="info" onClick={() => props.onRandom()}>

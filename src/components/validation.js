@@ -14,7 +14,7 @@ export default function Validacion(userData) {
     let regexPass= /[0-9]{1,}/;
 
     // Email validation
-    if (userData.email == '') {
+    if (userData.email === '') {
         errorEmail.vacio = true;
     } else {
         errorEmail.vacio = false;

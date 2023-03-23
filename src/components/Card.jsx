@@ -6,11 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea} from '@mui/material';
 import { Link } from 'react-router-dom';
+import 'animate.css';
 
 export default function ActionAreaCard(props) {
 
    return (
-      <div id='card-holder'>
+      <div id='card-holder' className='animate__animated animate__rotateIn'>
             <Card sx={{ maxWidth: 300 }}>
                <CardActionArea>
                   <div id='btn-close-div'>
