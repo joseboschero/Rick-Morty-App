@@ -41,7 +41,7 @@ export default function Nav(props) {
                     </div>
                     <SearchBar onSearch={props.onSearch} onRandom={props.onRandom} cardCounter={props.cardCounter} onCloseAll={props.onCloseAll} />
                     <Link to='/login'>
-                        <Button color='success' variant='contained' id='btnLogin'>Log in</Button>
+                        {!props.logged ? <Button color='success' variant='contained' id='btnLogin'>Log in</Button> : <Button color='success' variant='contained' id='btnLogin' onClick={props.logOut}>Log out</Button>}
                     </Link>
                 </Navbar>
                 <MostrarDeleteAll mostrar={true} onCloseAll={props.onCloseAll} cantCards={props.cardCounter}></MostrarDeleteAll>

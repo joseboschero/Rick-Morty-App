@@ -9,7 +9,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import CloseIcon from '@mui/icons-material/Close';
 import 'animate.css';
 
-export default function Login() {
+export default function Login(props) {
 
     const [userData, setUserData] = useState({
         email : '',
@@ -33,11 +33,17 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        alert(`Cuenta creada correctamente con los datos: email(${userData.email}), password(${userData.password})`)
-        setUserData({
-            email: '',
-            password: '',
-        })
+        // if (error.longitudEmail && error.longitudPass && error.sintaxis && error.numero && !error.vacio) {
+        //     alert(`Cuenta logeada correctamente con los datos: email(${userData.email}), password(${userData.password})`)
+        //     setUserData({
+        //         email: '',
+        //         password: '',
+        //     })
+        // } else {
+        //     alert('Datos incorrectos')
+        // }
+
+        props.login(userData)
     }
 
     function MostrarSubmit() {
@@ -59,6 +65,7 @@ export default function Login() {
     return (
         <div id="login" className='animate__animated animate__slideInLeft'>
             <h1>LOG IN</h1>
+            <h3>La cuenta es (joseboschero123@gmail.com)(1357911)</h3>
             <hr />
             <div id='formLogin'>
                 <form action="" onSubmit={handleSubmit}>

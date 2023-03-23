@@ -9,7 +9,6 @@ body {
     display: grid;
     margin: 0 auto;
     margin-bottom: 10px;
-    margin-top: 50px;
     min-width: 300px;
 }
 
@@ -39,6 +38,7 @@ body {
 
 #filas-cards {
     flex-wrap: wrap;
+    margin-top: 180px;
 }
 
 #random-char {
@@ -75,14 +75,8 @@ body {
 
 }
 
-#title-page-div {
-    text-align: center;
-}
-
-#title-page {
-    font-family: 'Patrick Hand SC', cursive;
-    color: #7CFC00;
-    font-size: 200px;
+#space {
+    height: 0%;
 }
 
 #home-about {
@@ -99,6 +93,11 @@ body {
     font-family: 'Patrick Hand SC', cursive;
     color: #04D939;
     align-items: center;
+    margin-top: 180px;
+}
+
+#about-text a {
+    color: #04D939;
 }
 
 #about-text h1,h2 {
@@ -119,6 +118,7 @@ body {
     color: #04D939;
     flex-direction: column;
     align-items: center;
+    margin-top: 180px;
 }
 
 #detail h1 {
@@ -260,14 +260,23 @@ body {
     border-style: dashed;
     border-radius: 15px;
     border-color: #04D939;
+    margin-top: 180px;
 }
 
 #login h1 {
     font-family: 'Patrick Hand SC', cursive;
     color: #7CFC00;
-    width: 100%;
     text-align: center;
     font-size: 80px;
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
+
+#login h3 {
+    font-family: 'Patrick Hand SC', cursive;
+    color: #7CFC00;
+    text-align: center;
+    font-size: 40px;
     margin-bottom: 0px;
     margin-top: 25px;
 }
@@ -331,4 +340,11 @@ body {
 
 #closeIcon {
     color: red;
+}
+
+#navbarDiv {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
